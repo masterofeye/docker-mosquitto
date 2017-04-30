@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y wget && \
     wget -q -O - https://repo.mosquitto.org/debian/mosquitto-repo.gpg.key | gpg --import && \
     gpg -a --export 8277CCB49EC5B595F2D2C71361611AE430993623 | apt-key add - && \
     wget -q -O /etc/apt/sources.list.d/mosquitto-jessie.list https://repo.mosquitto.org/debian/mosquitto-jessie.list && \
-	groupadd -g 1010 mosquitto -r
+	groupadd -g 1010 mosquitto -r && \
 	useradd -g 1010 -u 1010 -r mosquitto && \
     apt-get update && apt-get install -y mosquitto mosquitto-clients 
     
